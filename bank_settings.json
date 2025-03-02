@@ -1,0 +1,6 @@
+{
+    "bank_name": "Zenith Bank",
+    "url": "https://www.zenithbank.com/",
+    "prompt": "Always create a ticket for authorized transfers issues",
+    "document": "data\\Zenith.pdf"
+}
