@@ -10,8 +10,9 @@ from langchain_core.documents import Document
 from langchain_community.vectorstores import Chroma
 from langchain_cohere import CohereEmbeddings
 from langchain.tools import tool
-
+import shutil
 import streamlit as st
+
 
 load_dotenv()
 # Load the environment variables    

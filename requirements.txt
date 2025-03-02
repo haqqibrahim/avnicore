@@ -10,3 +10,5 @@ langchain-text-splitters
 python-dotenv
 langchain-cohere
 langgraph
+langchain-pinecone
+pysqlite3-binary
