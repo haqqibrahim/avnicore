@@ -15,4 +15,3 @@ beautifulsoup4
 elevenlabs
 assemblyai[extras]
 streamlit_webrtc
-pyaudio
