@@ -9,9 +9,4 @@ chromadb
 langchain-text-splitters
 python-dotenv
 langchain-cohere
-sentence-transformers
-lxml
-beautifulsoup4
-elevenlabs
-assemblyai[extras]
-streamlit_webrtc
+
