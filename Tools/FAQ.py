@@ -23,12 +23,12 @@ with open('bank_settings.json', 'r') as f:
 WEBSITE = settings.get("url")
 
 # Check if the folder exists and delete it if it does
-# persist_directory = "./chroma_db_test1"
-# if os.path.exists(persist_directory):
-#     shutil.rmtree(persist_directory)
-#     print(f"Deleted existing folder: {persist_directory}")
-# else:
-#     print(f"Folder does not exist: {persist_directory}")
+persist_directory = "./chroma_db"
+if os.path.exists(persist_directory):
+    shutil.rmtree(persist_directory)
+    print(f"Deleted existing folder: {persist_directory}")
+else:
+    print(f"Folder does not exist: {persist_directory}")
 
 
 def load_documents(folder_path: str) -> List[Document]:
@@ -67,7 +67,7 @@ vectorstore = Chroma.from_documents(
     collection_name=collection_name,
     documents=splits,
     embedding=embeddings,
-    persist_directory="./vector_db"
+    persist_directory="./chroma_db"
 )
 print("Vector store created and persisted to './chroma_db'")
 

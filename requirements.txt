@@ -9,4 +9,4 @@ chromadb
 langchain-text-splitters
 python-dotenv
 langchain-cohere
-
+langgraph
