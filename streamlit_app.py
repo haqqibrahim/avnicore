@@ -32,10 +32,10 @@ settings = load_settings()
 # Input fields with pre-populated values if available
 bank_name = st.text_input("Bank Name", value=settings.get("bank_name", ""), placeholder="Enter the bank name")
 url = st.text_input("URL", value=settings.get("url", ""), placeholder="Enter the bank's URL")
-prompt = st.text_area("Prompt", value=settings.get("prompt", ""), placeholder="Enter the prompt for the AI")
+prompt = st.text_area("Instruction", value=settings.get("prompt", ""), placeholder="Enter the detailed instructions for the AI")
 
 # File uploader for the document
-uploaded_file = st.file_uploader("Upload Document", type=["pdf", "docx", "txt"])
+uploaded_file = st.file_uploader("Upload Documents for knowledge base", type=["pdf", "docx", "txt"])
 
 if st.button("Save Settings"):
     # Update settings dictionary with the current input values

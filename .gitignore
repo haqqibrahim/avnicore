@@ -36,3 +36,4 @@ yarn-error.log*
 .env
 avnicore
 __pycache__
+bank_settings.json
