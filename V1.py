@@ -29,7 +29,6 @@ GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
 GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
-
 with open('bank_settings.json', 'r') as f:
     settings = json.load(f)
 
@@ -40,7 +39,7 @@ if not PROMPT:
     PROMPT = "You are a helpful Assistant that responds to user inquiries"
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", api_key=GOOGLE_API_KEY)
+llm = ChatGroq(model="llama-3.3-70b-specdec", api_key=GROQ_API_KEY, max_tokens=8192)
 
 web_search_tool = TavilySearchResults(max_results=2, api_key=TAVILY_API_KEY)
 
