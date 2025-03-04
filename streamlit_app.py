@@ -50,6 +50,7 @@ if st.button("Save Settings"):
             f.write(uploaded_file.getvalue())
         # Save the file path in settings
         settings["document"] = file_path
+        st.success(f"File '{uploaded_file.name}' uploaded successfully!")
     else:
         settings["document"] = None
 
