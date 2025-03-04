@@ -2,7 +2,6 @@ import sys
 import os
 import json
 from typing import List
-from dotenv import load_dotenv
 from pydantic import BaseModel
 
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader
@@ -16,7 +15,6 @@ import streamlit as st
 __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-load_dotenv()
 # Load the environment variables    
 COHERE_API_KEY = st.secrets["COHERE_API_KEY"]
 

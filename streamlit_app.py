@@ -23,6 +23,8 @@ def save_settings(settings):
 def reset_settings():
     if os.path.exists(SETTINGS_FILE):
         os.remove(SETTINGS_FILE)
+    if os.path.exists(DATA_FOLDER):
+        os.rmdir(DATA_FOLDER)
 
 st.title("Avnicore AI Setup")
 
