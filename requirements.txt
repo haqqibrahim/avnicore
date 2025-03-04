@@ -12,3 +12,4 @@ langchain-cohere
 langgraph
 langchain-pinecone
 langchain-groq
+pysqlite3-binary
