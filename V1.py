@@ -5,6 +5,7 @@ from typing_extensions import TypedDict
 from datetime import datetime
 
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools.tavily_search import TavilySearchResults
 
@@ -26,6 +27,7 @@ load_dotenv()
 # Load the environment variables
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 with open('bank_settings.json', 'r') as f:
     settings = json.load(f)
@@ -37,7 +39,7 @@ if not PROMPT:
     PROMPT = "You are a helpful Assistant that responds to user inquiries"
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", api_key=GOOGLE_API_KEY)
+llm = ChatGroq(model="llama-3.3-70b-specdec", api_key=GROQ_API_KEY, max_tokens=8192)
 
 web_search_tool = TavilySearchResults(max_results=2, api_key=TAVILY_API_KEY)
 
@@ -58,7 +60,7 @@ primary_assistant_prompt = ChatPromptTemplate.from_messages(
             "{prompt} {bank_name}. "
             "Use the provided tools to assist the user's queries."
             "When using the transaction history tool only, get the user's account number from the user any other tool does not require user's account number. "
-            "Use the create ticket tool only when the user has a complaint, and you can't resolve it. Ensure the user's account number is not shared with in ticket."
+            "Use the create ticket tool only when the user has a complaint, and you can't resolve it. Ensure the user's account number is shared with in ticket."
             "When using the create ticket tool, The subject and body of the ticket must be well detailed and formated. The body should be a detailed explanation of the issue and it must also contain the account number of the user."
             "Use the microsoft team tool to "
             "When searching, be persistent. Expand your query bounds if the first search returns no results. "

@@ -37,3 +37,7 @@ yarn-error.log*
 avnicore
 __pycache__
 bank_settings.json
+chroma_db_test1
+data/
+docs/
+.streamlit/secrets.toml
