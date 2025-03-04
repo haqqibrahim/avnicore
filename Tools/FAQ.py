@@ -1,3 +1,4 @@
+import sys
 import os
 import json
 from typing import List
@@ -11,6 +12,9 @@ from langchain_community.vectorstores import Chroma
 from langchain_cohere import CohereEmbeddings
 from langchain.tools import tool
 import streamlit as st
+
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 load_dotenv()
 # Load the environment variables    
